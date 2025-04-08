@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alex's Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      color: #111827;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+
+    .profile{
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+}    
+
+
+   .icon-img {
+  width: 32px;
+  height: 32px;
+  margin: 0 10px;
+  transition: transform 0.2s;
+}
+
+.icon-img:hover {
+  transform: scale(1.1);
+}
+
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #0077cc;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #0077cc;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .button:hover {
+      background-color: #005fa3;
+    }
+
+    @media (min-width: 700px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+       <img src="profile.jpg" class="profile" alt="Instagram" />
+
+      <h1>Hi, I'm M H Devanarayanan Nampoothiri👋</h1>
+      <p>I'm a CSE student</p>
+<div class="icons">
+  <table align="center">
+    <tr>
+      <td align="center">
+        <a href="https://www.instagram.com/.deva_narayanan.?utm_source=qr&igsh=cThwdXM3emx3NWw1" target="_blank">
+          <img src="instagram.png" class="icon-img" alt="Instagram" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://www.linkedin.com/in/m-h-devanarayanan-nampoothiri-50262b297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app target="_blank">
+          <img src="linkedin.png" class="icon-img" alt="LinkedIn" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://www.facebook.com/share/1A8GgE6Sce/?mibextid=qi2Omg" target="_blank">
+          <img src="facebook.png" class="icon-img" alt="Facebook" />
+        </a>
+      </td>
+      <td align="center">
+        <a href="mailto:mhdevanarayanan@gmail.com" target="_blank">
+          <img src="email.png" class="icon-img" alt="Email" />
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>
+
+    </section>
+
+    <!-- About Section -->
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm passionate about front-end development and UI/UX design. I enjoy
+        turning complex problems into simple, beautiful, and intuitive
+        designs. When I'm not coding, you'll find me exploring nature or
+        watching sci-fi movies.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card">
+          <h3>Project One</h3>
+          <p><h4>AIR QUALITY MONITORING SYSTEM</h4>
+This is a web-based air quality monitoring system designed to help you monitor air quality in your local area. The system uses real-time data from various sensors and displays it in a user-friendly interface. The data includes air temperature, humidity,LPG gas and pollutants like carbon monoxide.</p>
+          <a href="https://mh-devanarayanan-2004.github.io/MINIPROJECT/loader.html">View Project →</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="hero">
+      <h2>Get in Touch</h2>
+      <p>Interested in working together or just want to say hi? Drop me a message!</p>
+      <a href="mailto:mhdevanarayanan@gmail.com" class="button">Say Hello</a>
+    </section>
+  </div>
+</body>
+</html>
