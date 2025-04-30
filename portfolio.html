@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<link rel="icon" type="image/x-icon" href="instagram.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
@@ -11,6 +13,9 @@
       --card-bg: white;
       --button-bg: #0077cc;
       --button-hover: #005fa3;
+      --certificate-bg: #f9fafb;
+      --certificate-text: #333;
+      --modal-bg: rgba(0, 0, 0, 0.8);
     }
 
     body.dark {
@@ -19,6 +24,9 @@
       --card-bg: #2a2a2a;
       --button-bg: #4a90e2;
       --button-hover: #357ABD;
+      --certificate-bg: #3a3a3a;
+      --certificate-text: #f0f0f0;
+      --modal-bg: rgba(255, 255, 255, 0.1);
     }
 
     body {
@@ -135,6 +143,93 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    .certificate-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .certificate-section h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .certificate-card {
+      background-color: var(--certificate-bg);
+  color: var(--certificate-text);
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    .certificate-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .certificate-card h3 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px 0;
+    }
+
+    .certificate-card p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+     background-color: var(--modal-bg);
+    }
+
+    .modal-content {
+      display: block;
+      margin: 5% auto;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+
   </style>
 </head>
 <body>
@@ -177,6 +272,90 @@
       </div>
     </section>
 
+
+<section class="certificate-section">
+    <h2>Certificates</h2>
+    <div class="certificate-grid">
+      <!-- Certificate Cards -->
+
+      <div class="certificate-card" onclick="openModal('1.jpg')">
+        <img src="certificate\1.jpg" alt="Certificate 1">
+         </div>
+
+      <div class="certificate-card" onclick="openModal('2.jpg')">
+        <img src="certificate\2.jpg" alt="Certificate 2">
+      </div>
+
+      <div class="certificate-card" onclick="openModal('3.png')">
+        <img src="certificate\3.png" alt="Certificate 3">
+      </div>
+
+      <div class="certificate-card" onclick="openModal('5.jpg')">
+        <img src="certificate\5.jpg" alt="Certificate 4">
+      </div>
+
+            <div class="certificate-card" onclick="openModal('6.png')">
+        <img src="certificate\6.png" alt="Certificate 5">
+      </div>
+
+      <div class="certificate-card" onclick="openModal('7.png')">
+        <img src="certificate\7.png" alt="Certificate 6">
+      </div>
+
+            <div class="certificate-card" onclick="openModal('8.jpg')">
+        <img src="certificate\8.jpg" alt="Certificate 7">
+      </div>
+
+           <div class="certificate-card" onclick="openModal('9.png')">
+        <img src="certificate\9.png" alt="Certificate 8">
+      </div>
+
+           <div class="certificate-card" onclick="openModal('10.jpg')">
+        <img src="certificate\10.jpg" alt="Certificate 9">
+      </div>
+
+
+  <div class="certificate-card" onclick="openModal('11.jpg')">
+        <img src="certificate\11.jpg" alt="Certificate 10">
+      </div>
+
+  <div class="certificate-card" onclick="openModal('12.jpg')">
+        <img src="certificate\12.jpg" alt="Certificate 11">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Enlarged Certificate">
+    </div>
+  </div>
+
+  <script>
+    function openModal(imageSrc) {
+      document.getElementById("modalImage").src = imageSrc;
+      document.getElementById("imageModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Close modal when 'X' is clicked
+    document.querySelector(".close").addEventListener("click", closeModal);
+
+    // Optional: close modal when pressing ESC
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
+  </script>
+
+
     <!-- Contact Section -->
     <section class="hero">
       <h2>Get in Touch</h2>
@@ -189,6 +368,6 @@
     function toggleDarkMode() {
       document.body.classList.toggle('dark');
     }
-  </script>
+     </script>
 </body>
 </html>
