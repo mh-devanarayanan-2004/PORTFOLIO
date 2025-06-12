@@ -16,6 +16,9 @@
       --certificate-bg: #f9fafb;
       --certificate-text: #333;
       --modal-bg: rgba(0, 0, 0, 0.8);
+      --role-color: #555;
+      --duration-color: #888;
+      --project-desc-color: #333;
     }
 
     body.dark {
@@ -27,10 +30,13 @@
       --certificate-bg: #3a3a3a;
       --certificate-text: #f0f0f0;
       --modal-bg: rgba(255, 255, 255, 0.1);
+      --role-color: #bbbbbb;
+      --duration-color: #aaaaaa;
+      --project-desc-color: #dddddd;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       margin: 0;
@@ -230,6 +236,57 @@
     }
 
 
+    .experience-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .experience-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: var(--accent-color);
+    }
+
+    .experience-card {
+      background: var(--card-bg);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .experience-card h3 {
+      margin: 0;
+      font-size: 1.3em;
+    }
+
+    .experience-card .role {
+       font-weight: bold;
+       color: var(--role-color);
+    }
+
+    .experience-card .duration {
+      font-size: 0.95em;
+      color: var(--duration-color);
+      margin-bottom: 10px;
+    }
+
+    .experience-card p {
+      margin: 10px 0 0;
+      color: var(--project-desc-color);
+    }
+
+     .dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--text-color);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+
   </style>
 </head>
 <body>
@@ -244,7 +301,7 @@
       <div class="icons">
         <table align="center">
           <tr>
-            <td><a href="https://www.instagram.com/.deva_narayanan.?utm_source=qr&igsh=cThwdXM3emx3NWw1" target="_blank"><img src="instagram.png" class="icon-img" alt="Instagram" /></a></td>
+            <td><a href="https://www.instagram.com/.deva_narayanan.?igsh=cThwdXM3emx3NWw1" target="_blank"><img src="instagram.png" class="icon-img" alt="Instagram" /></a></td>
             <td><a href="https://www.linkedin.com/in/m-h-devanarayanan-nampoothiri-50262b297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="linkedin.png" class="icon-img" alt="LinkedIn" /></a></td>
             <td><a href="https://www.facebook.com/share/1A8GgE6Sce/?mibextid=qi2Omg" target="_blank"><img src="facebook.png" class="icon-img" alt="Facebook" /></a></td>
             <td><a href="mailto:mhdevanarayanan@gmail.com" target="_blank"><img src="email.png" class="icon-img" alt="Email" /></a></td>
@@ -333,6 +390,28 @@
       <img id="modalImage" src="" alt="Enlarged Certificate">
     </div>
   </div>
+
+<section class="experience-section">
+    <h2>Experience</h2>
+
+    <div class="experience-card">
+      <h3>IEEE STUDENT BRANCH COLLEGE OF ENGINEERING KARUNAGAPPALLY</h3>
+      <br>
+      <div class="role"><div class="dot"></div> Secretary of IEEE SIGHT Affinity Group CEK</div>
+      <div class="duration">MAR 2024 – FEB 2025</div>
+      <br>
+      <div class="role"><div class="dot"></div> Electronics & Communication Coordinator (ECC)</div>
+      <div class="duration">MAR 2024 – FEB 2025</div>
+    </div>
+
+    <div class="experience-card">
+      <h3>IEDC COLLEGE OF ENGINEERING KARUNAGAPPALLY</h3>
+      <br>
+      <div class="role"><div class="dot"></div> Design Lead</div>
+      <div class="duration">MAR 2025 – Present</div>
+    </div>
+
+  </section>
 
   <script>
     function openModal(imageSrc) {
