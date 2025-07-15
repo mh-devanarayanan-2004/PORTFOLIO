@@ -8,12 +8,12 @@
   <title>My Portfolio</title>
   <style>
     :root {
-      --bg-color: #EDEADE;
+      --bg-color: #EFEEEA;
       --text-color: #333;
       --card-bg: white;
       --button-bg: #0077cc;
       --button-hover: #005fa3;
-      --certificate-bg: #f9fafb;
+      --certificate-bg: #ced2d6;
       --certificate-text: #333;
       --modal-bg: rgba(0, 0, 0, 0.8);
       --role-color: #555;
@@ -43,7 +43,48 @@
       padding: 0;
       transition: background-color 0.3s, color 0.3s;
     }
+     
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+
+
+     section {
+           padding: .5rem;
+            }
+     
     .container {
       max-width: 1000px;
       margin: auto;
@@ -74,6 +115,7 @@
     .hero {
       text-align: center;
       margin-top: 2rem;
+      padding: 2rem;
     }
 
     .profile {
@@ -135,20 +177,19 @@
       background-color: var(--button-hover);
     }
 
-    .toggle-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-
+    
     @media (min-width: 700px) {
       .projects {
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    
+    .project-section {
+      max-width: 80%;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
 
     .certificate-section {
       max-width: 1100px;
@@ -173,7 +214,7 @@
 
     .certificate-card {
       background-color: var(--certificate-bg);
-  color: var(--certificate-text);
+      color: var(--certificate-text);
       padding: 12px;
       border-radius: 6px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.05);
@@ -237,7 +278,7 @@
 
 
     .experience-section {
-      max-width: 1000px;
+      max-width: 50%;
       margin: 40px auto;
       padding: 20px;
     }
@@ -287,18 +328,163 @@
     }
 
 
+.theme-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 30px;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #4a4a4a;
+  border-radius: 34px;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  top: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+input:checked + .slider::before {
+  transform: translateX(30px);
+}
+
+input:checked + .slider {
+  background-color: var(--button-bg, #555);
+}
+
+.icon {
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  font-size: 16px;
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  background: url('ban.jpg') center/cover no-repeat;
+
+}
+
+.hero-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 0;
+}
+
+.hero-banner__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.icons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .hero-banner {
+    height: 300px;
+  }
+  .profile {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
   </style>
 </head>
 <body>
-  <button class="toggle-button button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-<br><br>
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <img src="profile.jpg" class="profile" alt="Profile" />
-      <h1>Hi, I'm M H Devanarayanan Nampoothiri👋</h1>
-      <p>I'm a CSE student</p>
-      <div class="icons">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="topnav" id="myTopnav">
+<table align="center" width="60%" height="40">
+       <tbody><tr>
+        <td align="center" width="120"><a href="#experience-section" class="active">Experience</a></td> 
+        <td align="center" width="120"><a href="#project-section">Project</a></td> 
+        <td align="center" width="120"><a href="#about">About</a></td> 
+        <td align="center" width="120"><a href="#hero">Contact</a></td> 
+        
+       </tr></tbody></table>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<label class="theme-switch">
+  <input type="checkbox" id="darkModeSwitch" onchange="toggleDarkMode()" />
+  <span class="slider">
+    <span class="icon sun">☀️</span>
+    <span class="icon moon">🌙</span>
+  </span>
+</label>
+
+<section class="hero-banner">
+  <div class="hero-banner__overlay"></div>
+  <div class="hero-banner__content">
+    <img src="profile.jpg" alt="Profile" class="profile" width="200" height="200" />
+    <h1>Hi, I'm M H Devanarayanan Nampoothiri 👋</h1>
+    <p>I'm a CSE student. Click the icons below to see my social media accounts</p>
+    <div class="icons">
+      <!-- your social media icon links -->
         <table align="center">
           <tr>
             <td><a href="https://www.instagram.com/__.deva_narayanan.__" target="_blank"><img src="instagram.png" class="icon-img" alt="Instagram" /></a></td>
@@ -307,17 +493,20 @@
             <td><a href="mailto:mhdevanarayanan@gmail.com" target="_blank"><img src="email.png" class="icon-img" alt="Email" /></a></td>
           </tr>
         </table>
-      </div>
-    </section>
+   </div>
+   </div>
+   
+  </div>
+</section>
 
     <!-- About Section -->
-    <section>
+    <section id="about">
       <h2>About Me</h2>
       <p>I'm passionate about front-end development and UI/UX design. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring nature or watching sci-fi movies.</p>
     </section>
 
     <!-- Projects Section -->
-    <section>
+    <section class="project-section"  id="project-section">
       <h2>Projects</h2>
       <div class="projects">
         <div class="card">
@@ -328,6 +517,28 @@
         </div>
       </div>
     </section>
+
+<section class="experience-section" id="experience-section">
+    <h2>Experience</h2>
+
+    <div class="experience-card">
+      <h3>IEEE STUDENT BRANCH COLLEGE OF ENGINEERING KARUNAGAPPALLY</h3>
+      <br>
+      <div class="role"><div class="dot"></div> Secretary of IEEE SIGHT Affinity Group CEK</div>
+      <div class="duration">MAR 2024 – FEB 2025</div>
+      <br>
+      <div class="role"><div class="dot"></div> Electronics & Communication Coordinator (ECC)</div>
+      <div class="duration">MAR 2024 – FEB 2025</div>
+    </div>
+
+    <div class="experience-card">
+      <h3>IEDC COLLEGE OF ENGINEERING KARUNAGAPPALLY</h3>
+      <br>
+      <div class="role"><div class="dot"></div> Design Lead</div>
+      <div class="duration">MAR 2025 – Present</div>
+    </div>
+
+  </section>
 
 
 <section class="certificate-section">
@@ -391,28 +602,6 @@
     </div>
   </div>
 
-<section class="experience-section">
-    <h2>Experience</h2>
-
-    <div class="experience-card">
-      <h3>IEEE STUDENT BRANCH COLLEGE OF ENGINEERING KARUNAGAPPALLY</h3>
-      <br>
-      <div class="role"><div class="dot"></div> Secretary of IEEE SIGHT Affinity Group CEK</div>
-      <div class="duration">MAR 2024 – FEB 2025</div>
-      <br>
-      <div class="role"><div class="dot"></div> Electronics & Communication Coordinator (ECC)</div>
-      <div class="duration">MAR 2024 – FEB 2025</div>
-    </div>
-
-    <div class="experience-card">
-      <h3>IEDC COLLEGE OF ENGINEERING KARUNAGAPPALLY</h3>
-      <br>
-      <div class="role"><div class="dot"></div> Design Lead</div>
-      <div class="duration">MAR 2025 – Present</div>
-    </div>
-
-  </section>
-
   <script>
     function openModal(imageSrc) {
       document.getElementById("modalImage").src = imageSrc;
@@ -436,7 +625,7 @@
 
 
     <!-- Contact Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
       <h2>Get in Touch</h2>
       <p>Interested in working together or just want to say hi? Drop me a message!</p>
       <a href="mailto:mhdevanarayanan@gmail.com" class="button">Say Hello</a>
@@ -444,9 +633,31 @@
   </div>
 
   <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
+  function toggleDarkMode() {
+    const body = document.body;
+    const switchElement = document.getElementById("darkModeSwitch");
+
+    if (switchElement.checked) {
+      body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
-     </script>
+  }
+
+  // Load saved theme
+  window.onload = function () {
+    const savedTheme = localStorage.getItem("theme");
+    const switchElement = document.getElementById("darkModeSwitch");
+
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      switchElement.checked = true;
+    }
+  };
+</script>
+
+
 </body>
 </html>
