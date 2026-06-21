@@ -70,28 +70,10 @@
   color: white;
 }
 
-.topnav .icon {
-  display: none;
-}
-
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-
-
      section {
            padding: .5rem;
             }
      
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-
     section {
       margin-bottom: 4rem;
     }
@@ -413,17 +395,6 @@ input:checked + .slider {
   gap: 1rem;
 }
 
-@media (max-width: 767px) {
-  .hero-banner {
-    height: 300px;
-  }
-  .profile {
-    width: 150px;
-    height: 150px;
-  }
-}
-
-
 .project-section,
 .experience-section,
 #about {
@@ -515,7 +486,7 @@ input:checked + .slider {
 
   /* Theme Switch */
   .theme-switch {
-    top: 20px;
+    top: 30px;
     left: 10px;
     transform: scale(0.85);
   }
@@ -544,23 +515,7 @@ input:checked + .slider {
         <td align="center" width="120"><a href="#hero">Contact</a></td> 
         
        </tr></tbody></table>
-
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
 </div>
-
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-</script>
 
 <label class="theme-switch">
   <input type="checkbox" id="darkModeSwitch" onchange="toggleDarkMode()" />
