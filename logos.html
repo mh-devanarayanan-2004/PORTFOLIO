@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="icon" type="image/x-icon" href="instagram.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+      --bg-color: #1a1a1a;
+      --text-color: #f0f0f0;
+      --card-bg: #2a2a2a;
+      --button-bg: #4a90e2;
+      --button-hover: #357ABD;
+      --certificate-bg: #3a3a3a;
+      --certificate-text: #f0f0f0;
+      --modal-bg: rgba(255, 255, 255, 0.1);
+      --role-color: #bbbbbb;
+      --duration-color: #aaaaaa;
+      --project-desc-color: #dddddd;
+    }
+     
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: center;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+
+
+     section {
+           padding: .5rem;
+            }
+     
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+
+
+    .card {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: background 0.3s;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: var(--button-bg);
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+
+  .button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--button-bg);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: var(--button-hover);
+    }
+
+
+       
+    @media (min-width: 700px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+   
+    .certificate-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .certificate-section h2 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .certificate-card {
+      background-color: var(--certificate-bg);
+      color: var(--certificate-text);
+      padding: 12px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    .certificate-card img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .certificate-card h3 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 4px 0;
+    }
+
+    .certificate-card p {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+     background-color: var(--modal-bg);
+    }
+
+    .modal-content {
+      display: block;
+      margin: 5% auto;
+      max-width: 50%;
+      max-height: 50%;
+    }
+
+    .modal-content img {
+      width: 80%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+
+   
+
+  </style>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="topnav" id="myTopnav">
+<table align="center" width="20%" height="40">
+       <tbody><tr>
+        <td align="center" width="120"><a href="#experience-section" class="active"><--BACK</a></td> 
+        
+       </tr></tbody></table>
+
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<section class="certificate-section">
+    <h2>LOGO</h2>
+    <div class="certificate-grid">
+      <!-- Certificate Cards -->
+
+<div class="certificate-card" onclick="openModal('work/logo/1.png')">
+    <img src="work/logo/1.png" alt="Logo 1">
+</div>
+
+<div class="certificate-card" onclick="openModal('work/logo/2.png')">
+    <img src="work/logo/2.png" alt="Logo 2">
+</div>
+
+<div class="certificate-card" onclick="openModal('work/logo/3.png')">
+    <img src="work/logo/3.png" alt="Logo 3">
+</div>
+
+<div class="certificate-card" onclick="openModal('work/logo/4.png')">
+    <img src="work/logo/4.png" alt="Logo 4">
+</div>
+
+<div class="certificate-card" onclick="openModal('work/logo/5.png')">
+    <img src="work/logo/5.png" alt="Logo 5">
+</div>
+
+<div class="certificate-card" onclick="openModal('work/logo/6.png')">
+    <img src="work/logo/6.png" alt="Logo 6">
+</div>
+
+    </div>
+  </section>
+
+
+
+    </div>
+  </section>
+
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Enlarged Certificate">
+    </div>
+  </div>
+
+  <script>
+    function openModal(imageSrc) {
+      document.getElementById("modalImage").src = imageSrc;
+      document.getElementById("imageModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    // Close modal when 'X' is clicked
+    document.querySelector(".close").addEventListener("click", closeModal);
+
+    // Optional: close modal when pressing ESC
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
+  </script>
+
+
+    <!-- Contact Section -->
+    <section class="hero" id="hero">
+      <h2>Get in Touch</h2>
+      <p>Interested in working together or just want to say hi? Drop me a message!</p>
+      <a href="mailto:mhdevanarayanan@gmail.com" class="button">Say Hello</a>
+    </section>
+  </div>
+
+
+</body>
+</html>
+
+
