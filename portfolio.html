@@ -402,7 +402,27 @@ input:checked + .slider {
   max-width: 1000px;
   margin: 40px auto;
 }
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--card-bg);
+    color: var(--project-desc-color);
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: 15px;
+    z-index: 1000;
+}
 
+body.dark .footer{
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer p{
+    margin: 0;
+}
 
 /* =========================
    MOBILE RESPONSIVE FIX
