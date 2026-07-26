@@ -211,10 +211,21 @@
     }
 
     .modal-content img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
+    width: auto;
+    height: auto;
+    max-width: 75vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .modal-content img {
+        max-width: 95vw;
+        max-height: 90vh;
     }
+}
 
     .close {
       position: absolute;
